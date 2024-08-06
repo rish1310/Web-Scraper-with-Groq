@@ -20,12 +20,12 @@ function App() {
   const [scraping, setScraping] = useState(false);
   const [error, setError] = useState(null);
   const [copied, setCopied] = useState(false);
-
+  console.log(process.env.REACT_APP_SERVER_URL);
   const fetchProductSitemapUrl = async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('http://localhost:5000/getProductSitemap', { domain });
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/getProductSitemap`, { domain });
       setProductSitemapUrl(response.data.productSitemapUrl);
     } catch (error) {
       setError('Error fetching product sitemap URL. Please try again.');
@@ -39,7 +39,7 @@ function App() {
     setScraping(true);
     setError(null);
     try {
-      const response = await axios.post('http://localhost:5000/scrape', { url });
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/scrape`, { url });
       setProducts(response.data);
     } catch (error) {
       setError('Error scraping products. Please try again.');

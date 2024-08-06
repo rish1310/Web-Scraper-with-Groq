@@ -12,9 +12,7 @@ export async function scrapeProducts(url) {
 async function getSitemapProducts(url) {
     const response = await axios.get(url);
     const products = await parseXml(response.data);
-
-    // Optional: Log products for debugging
-    console.log('Products:', products);
+    // console.log('Products:', products);
 
     return products
         .map(product => {

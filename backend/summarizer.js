@@ -15,7 +15,7 @@ export async function summarizeText(text) {
                 },
                 {
                     role: "user",
-                    content: `Summarize the following product in 3-4 very short points without:\n\n${text.slice(0, 1000)}`
+                    content: `Summarize the following product in 3-4 very short points:\n\n${text.slice(0, 1000)}`
                 }
             ],
             model: "mixtral-8x7b-32768",

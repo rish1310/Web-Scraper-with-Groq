@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { scrapeProducts } from './scraper.js';
-import { getProductSitemapUrl } from './xmlFetcher.js'; // Import the xmlFetcher function
+import { getProductSitemapUrl } from './xmlFetcher.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,7 +20,7 @@ app.post('/scrape', async (req, res) => {
     }
 });
 
-// New route to get product sitemap URL
+// Route to get product sitemap URL
 app.post('/getProductSitemap', async (req, res) => {
     const { domain } = req.body;
     try {
