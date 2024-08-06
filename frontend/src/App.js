@@ -20,7 +20,6 @@ function App() {
   const [scraping, setScraping] = useState(false);
   const [error, setError] = useState(null);
   const [copied, setCopied] = useState(false);
-  console.log(process.env.REACT_APP_SERVER_URL);
   const fetchProductSitemapUrl = async () => {
     setLoading(true);
     setError(null);
